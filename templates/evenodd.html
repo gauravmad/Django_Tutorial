@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block content %}
+<br />
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Even/Odd in Django</h2>
+    </div>
+  </div>
+  <div class="mx-auto" style="width: 70vw">
+    <div>
+      <form action="" method="post">
+        {% csrf_token %}
+        {% if error %}
+
+        <div class="alert alert-danger" role="alert">
+          Please Enter the value
+        </div>
+        {% endif %} 
+        <div>
+
+          <label for="" class="">Input1</label>
+          <input type="text" name="a" value="{{inpt}}" class="form-control" />
+        </div>
+
+        <div class="mt-2">
+          <button type="submit" class="btn btn-danger" >Check</button>
+        </div>
+        <div class="mt-3">
+          Output:
+          <input type="text" name="c" value="{{d}}" class="mx-3" />
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

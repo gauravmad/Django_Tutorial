@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>{{newsDetails.title}}</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. </p>
+      </div>
+
+      <div class="row content">
+        <div class="col-lg-6 ">
+          <p class="text-justify">
+            {{newsDetails.news_desc | safe}}
+          </p>
+        </div>
+        <div class="col-lg-6 ">
+          <img src="/media/{{newsDetails.news_image}}" alt="" class="img-fluid">
+        </div>
+        
+      </div>
+
+    </div>
+  </section>
+{% endblock %}

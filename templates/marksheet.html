@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Marksheet in Django</h2>
+        </div>
+    </div>
+    <div class="mx-auto" style="width: 70vw;">
+        <div>
+            <h2>{{status |safe}}</h2>
+            <form action="" method="post">
+                {% csrf_token %}
+
+                {% if error %}
+                <div class="alert alert-warning" role="alert">
+                    Please enter the Marks
+                </div>
+                {% endif %}
+                <div>
+                    <label for="" class="">Physics</label>
+                    <input type="text" name="subj1" value="{{sub1}}" class="form-control" >
+                </div>
+                <div>
+                    <label for="" class="">Chemistry</label>
+                    <input type="text" name="subj2" value="{{sub2}}" class="form-control" >
+                </div>
+                <div>
+                    <label for="" class="">Math</label>
+                    <input type="text" name="subj3" value="{{sub3}}" class="form-control" >
+                </div>
+                <div>
+            </div>
+            <div class="mt-2">
+                <button type="submit" class="btn btn-danger">Calculate</button>
+            </div>
+            <div class="mt-3">
+                Total:
+                <br>
+                <input type="text" name="total" value="{{total}}" class="form-control">
+            </div>
+            <div class="mt-3">
+                Percentage:
+                <br>
+                <input type="text" name="per" value="{{per}}" class="form-control">
+            </div>
+            <br>
+        </form>
+    </div>
+</div>
+</section>    
+
+
+{% endblock %}

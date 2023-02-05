@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Calculator in Django</h2>
+        </div>
+    </div>
+    <div class="mx-auto" style="width: 70vw;">
+        <div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div>
+                    <label for="" class="">Input1</label>
+                    <input type="text" name="a" value="{{val1}}" class="form-control" >
+                </div>
+                <div>
+                <label for="" class="">Select Operator</label>
+                <br>
+                <select name="opr" id="" class="form-control">
+                    <option value="+" class="text-center">+</option>
+                    <option value="-" class="text-center">-</option>
+                    <option value="*" class="text-center">*</option>
+                    <option value="/" class="text-center">/</option>
+                </select>
+                
+            </div>
+            <div>
+                <label for="" class="">Input2</label>
+                <input type="text" name="b"  value="{{val2}}"class="form-control">
+            </div>
+            <div class="mt-2">
+                <button type="submit" class="btn btn-danger">Calculate</button>
+            </div>
+            <div class="mt-3">
+                Output:
+                <br>
+                <input type="text" name="c" value="{{c}}" class="form-control">
+            </div>
+        </form>
+    </div>
+</div>
+</section>    
+
+
+{% endblock %}
